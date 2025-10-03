@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>NewTankGame — 2D Tanks</title>
+<style>
+  :root{
+    --bg:#0b1020; --panel:#101832; --ink:#e8eefc; --muted:#9fb3ff; --accent:#7ee787; --danger:#ff7b72; --gold:#ffd166;
+  }
+  *{box-sizing:border-box; -webkit-tap-highlight-color:transparent}
+  html,body{height:100%;margin:0;background:var(--bg);color:var(--ink);font:14px/1.35 system-ui,-apple-system,Segoe UI,Roboto,Arial}
+  #wrap{display:grid; grid-template-columns: 280px 1fr; gap: 0; height:100vh}
+  aside{background:var(--panel); padding:12px; border-right:1px solid #1a2a55; overflow:auto}
+  main{position:relative; display:flex; align-items:center; justify-content:center}
+  canvas{background:#0a0f22; border:1px solid #1c2d59; image-rendering: pixelated}
+  h1{font-size:16px; margin:0 0 8px}
+  .row{margin:8px 0}
+  button, select{background:#0f1730; color:var(--ink); border:1px solid #1a2a55; padding:8px 10px; border-radius:8px; cursor:pointer}
+  button:hover{border-color:#27418b}
+  .pill{display:inline-block; padding:2px 8px; border-radius:999px; background:#0f1a3a; border:1px solid #1a2a55; color:var(--muted); font-size:12px}
+  .stat{margin:4px 0}
+  .leveldot{display:inline-block; width:12px; height:12px; border-radius:50%; margin:2px; border:1px solid #27418b; background:#0b1535}
+  .leveldot.passed{background:var(--accent)}
+  .legend{font-size:12px; color:var(--muted)}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <aside>
+    <h1>NewTankGame</h1>
+    <div class="row">
+      <button id="btnStart">Start</button>
+      <button id="btnPause">Pause</button>
+      <button id="btnReset">Reset</button>
+    </div>
+    <div class="row">
+      <label>Difficulty curve:
+        <select id="curve">
+          <option value="standard">Standard</option>
+          <option value="ammo-scarce">Ammo-Scarce</option>
+          <option value="swarm">Swarm</option>
+        </select>
+      </label>
+    </div>
+    <div class="row">
+      <div class="stat">Level: <span id="uiLevel">1</span> / 10</div>
+      <div class="stat">Lives: <span id="uiLives">3</span></div>
+      <div class="stat">Score: <span id="uiScore">0</span></div>
+      <div class="stat">Player Ammo: <span id="uiAmmo">0</span></div>
+    </div>
+    <div class="row">
+      <div>Progress:</div>
+      <div id="progress"></div>
+    </div>
+    <div class="row legend">
+      Controls: WASD to move, SPACE to shoot (requires ammo).<br/>
+      Barriers block shots. Pick up ammo crates to reload.
+    </div>
+  </aside>
+  <main>
+    <canvas id="game" width="960" height="540"></canvas>
+  </main>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/utils.js"></script>
+<script src="js/levels.js"></script>
+<script src="js/entities/bullet.js"></script>
+<script src="js/entities/ammo.js"></script>
+<script src="js/entities/tank.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
