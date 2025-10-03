@@ -83,7 +83,4 @@ No additional dependencies — the game runs entirely in the browser.
 
 ---
 
-## 📸 Screenshots / Demo
-
-_(Replace with screenshots or GIFs later for GitHub)_
 
