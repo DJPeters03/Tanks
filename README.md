@@ -8,17 +8,17 @@ Players face off against AI-controlled tanks, navigate obstacles, and survive ac
 ## 📂 Project Structure
 
 .
-├── index.html # Entry point, UI layout, and canvas
-├── js/
-│ ├── config.js # Global configuration & game settings
-│ ├── utils.js # Utility functions (math, randomness, helpers)
-│ ├── levels.js # Level definitions and difficulty curves
-│ ├── ai.js # AI logic (enemy tank movement & behavior)
-│ ├── main.js # Game loop, rendering, and event handling
-│ └── entities/ # Core game objects
-│ ├── tank.js # Player & enemy tank logic
-│ ├── bullet.js # Bullet projectile logic
-│ └── ammo.js # Ammo crate logic
+ ├── index.html # Entry point, UI layout, and canvas
+ ├── js/
+ │ ├── config.js # Global configuration & game settings
+ │ ├── utils.js # Utility functions (math, randomness, helpers)
+ │ ├── levels.js # Level definitions and difficulty curves
+ │ ├── ai.js # AI logic (enemy tank movement & behavior)
+ │ ├── main.js # Game loop, rendering, and event handling
+ │ └── entities/ # Core game objects
+ │ ├── tank.js # Player & enemy tank logic
+ │ ├── bullet.js # Bullet projectile logic
+ │ └── ammo.js # Ammo crate logic
 
 ---
 
